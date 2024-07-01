@@ -1,0 +1,81 @@
+inc_imbuf = include_directories('.')
+
+inc_imbuf_private = [
+    include_directories('../blenkernel'),
+    include_directories('../blenloader'),
+    include_directories('../gpu'),
+    include_directories('../makesrna'),
+    include_directories('../sequencer'),
+    include_directories('../memutil'),
+    include_directories('../opencolorio'),
+]
+
+dep_imbuf = [blk, bli, blo, dna, openimageio, mem, memutil, opencolorio, nanosvg, dep_jpeg]
+
+src_imbuf = files(
+    'intern/allocimbuf.cc',
+    'intern/anim_movie.cc',
+    'intern/colormanagement.cc',
+    'intern/colormanagement_inline.h',
+    'intern/divers.cc',
+    'intern/filetype.cc',
+    'intern/filter.cc',
+    'intern/format_bmp.cc',
+    'intern/format_dds.cc',
+    'intern/format_hdr.cc',
+    'intern/format_png.cc',
+    'intern/format_psd.cc',
+    'intern/format_svg.cc',
+    'intern/format_targa.cc',
+    'intern/format_tiff.cc',
+    'intern/imageprocess.cc',
+    'intern/indexer.cc',
+    'intern/interp.cc',
+    'intern/iris.cc',
+    'intern/jpeg.cc',
+    'intern/metadata.cc',
+    'intern/module.cc',
+    'intern/moviecache.cc',
+    'intern/readimage.cc',
+    'intern/rectop.cc',
+    'intern/rotate.cc',
+    'intern/scaling.cc',
+    'intern/stereoimbuf.cc',
+    'intern/thumbs.cc',
+    'intern/thumbs_blend.cc',
+    'intern/thumbs_font.cc',
+    'intern/transform.cc',
+    'intern/util.cc',
+    'intern/util_gpu.cc',
+    'intern/writeimage.cc',
+    'IMB_colormanagement.hh',
+    'IMB_imbuf.hh',
+    'IMB_imbuf_enums.h',
+    'IMB_imbuf_types.hh',
+    'IMB_interp.hh',
+    'IMB_metadata.hh',
+    'IMB_moviecache.hh',
+    'IMB_openexr.hh',
+    'IMB_thumbs.hh',
+    'intern/IMB_allocimbuf.hh',
+    'intern/IMB_anim.hh',
+    'intern/IMB_colormanagement_intern.hh',
+    'intern/IMB_filetype.hh',
+    'intern/IMB_filter.hh',
+    'intern/IMB_indexer.hh',
+    'intern/imbuf.hh',
+    '../../../intern/ffmpeg/ffmpeg_compat.h',
+)
+
+lib_imbuf = static_library(
+  'acc_imbuf',
+  src_imbuf,
+  include_directories: inc_imbuf_private,
+  dependencies: dep_imbuf,
+  install: true,
+)
+
+ghost = declare_dependency(
+  include_directories: inc_imbuf,
+  link_with: lib_imbuf,
+)

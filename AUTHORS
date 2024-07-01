@@ -1,0 +1,34 @@
+# This is the list of Blender authors for copyright purposes.
+#
+# This does not necessarily list everyone who has contributed code.
+# To see the full list of contributors, see the revision history in source
+# control.
+
+# Names should be added to this file with this pattern:
+#
+# For individuals:
+#   Name <email address>
+#
+# For organizations:
+#   Organization <fnmatch pattern>
+#
+# See python fnmatch module documentation for more information.
+#
+# Please keep the list sorted.
+#
+# The individual authors section can be regenerated using:
+#   python ./tools/utils/authors_git_gen.py
+
+# BEGIN individuals section.
+
+# Please DO NOT APPEND here. See comments at the top of the file.
+# END individuals section.
+
+# BEGIN organizations section.
+Apple <*@apple.com>
+AMD <*@amd.com>
+Blender Foundation <*@blender.org>
+Intel <*@intel.com>
+NVIDIA <*@nvidia.com>
+# Please DO NOT APPEND here. See comments at the top of the file.
+# END organizations section.

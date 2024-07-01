@@ -1,0 +1,133 @@
+option(
+  'mem_jemalloc',
+  type: 'boolean',
+  value: true,
+  description: 'Enable malloc replacement (http://www.canonware.com/jemalloc)',
+)
+
+# currently only used for BLI_mempool
+option(
+  'mem_valgrind',
+  type: 'boolean',
+  value: false,
+  description: 'Enable extended valgrind support for better reporting',
+)
+
+option(
+  'cxx_guardedalloc',
+  type: 'boolean',
+  value: false,
+  description: 'Enable GuardedAlloc for C++ memory allocation tracking (only enable for development)',
+)
+
+option(
+  'ghost_debug',
+  type: 'boolean',
+  value: true,
+  description: 'Enable debugging output for the GHOST library',
+)
+
+option(
+  'ghost_wayland',
+  type: 'boolean',
+  value: true,
+  description: 'Enable building Blender against Wayland for windowing',
+)
+
+option(
+  'ghost_wayland_libdecor',
+  type: 'boolean',
+  value: false,
+  description: 'Optionally build with LibDecor window decorations',
+)
+
+option(
+  'ghost_wayland_dynload',
+  type: 'boolean',
+  value: false,
+  description: 'Enable runtime dynamic WAYLAND libraries loading',
+)
+
+option(
+  'opengl_backend',
+  type: 'boolean',
+  value: true,
+  description: 'Enable OpenGL support as graphic backend',
+)
+
+option(
+  'system_freetype',
+  type: 'boolean',
+  value: false,
+  description: 'Use the freetype library provided by the operating system',
+)
+
+option(
+  'system_eigen3',
+  type: 'boolean',
+  value: false,
+  description: 'Use the systems Eigen3 library',
+)
+
+option(
+  'compiler_short_file_macro',
+  type: 'boolean',
+  value: true,
+  description: 'Make paths in macros like __FILE__ relative to top level source and build directories.',
+)
+
+option(
+  'linker_gold',
+  type: 'boolean',
+  value: true,
+  description: 'Use ld.gold linker which is usually faster than ld.bfd.',
+)
+
+option(
+  'linker_lld',
+  type: 'boolean',
+  value: false,
+  description: 'Use ld.lld linker which is usually faster than ld.gold.',
+)
+
+option(
+  'linker_mold',
+  type: 'boolean',
+  value: false,
+  description: 'Use ld.mold linker which is usually faster than ld.gold & ld.lld.',
+)
+
+option(
+  'vulkan_backend',
+  type: 'boolean',
+  value: false,
+  description: 'Enable Vulkan as graphics backend (experimental)',
+)
+
+option(
+  'vulkan_guardedalloc',
+  type: 'boolean',
+  value: false,
+  description: 'Use guardedalloc for host allocations done inside Vulkan (development option)',
+)
+
+option(
+  'strsize_debug',
+  type: 'boolean',
+  value: false,
+  description: 'Ensure string operations on fixed size buffers (works well with with \"WITH_COMPILER_ASAN\" & valgrind to detect incorrect buffer size arguments)',
+)
+
+option(
+  'python_module',
+  type: 'boolean',
+  value: false,
+  description: 'Enable building as a python module which runs without a user interface, like running regular blender in background mode (only enable for development), installs to PYTHON_SITE_PACKAGES (or CMAKE_INSTALL_PREFIX if WITH_INSTALL_PORTABLE is enabled).',
+)
+
+option(
+  'blender_thumbnailer',
+  type: 'boolean',
+  value: false,
+  description: 'Build \"BlendThumb.dll\" helper for Windows explorer integration to support extracting thumbnails from `.blend` files.',
+)
